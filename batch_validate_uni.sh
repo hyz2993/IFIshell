@@ -142,5 +142,6 @@ echo "This shell script is written by Yazhou He./n
 		#target_md5=${target_md5// /\\ }
 		echo "Target: $target_md5" > "$local_path"/"$dir"/val_result.txt
 		validate.py -y "$target_md5" >> "$local_path"/"$dir"/val_result.txt
-		sed -i "" '/%/d' "$local_path"/"$dir"/val_result.txt
+		# not finished yet, trying to remove the "[xx%]" in the text file
+		#sed -i "" '/%/d' "$local_path"/"$dir"/val_result.txt
 	done
