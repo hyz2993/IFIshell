@@ -60,13 +60,11 @@ for dir in */;
 do
     echo "object $dir processing"
     filename="$dir"CHECKSUM.md5
-    #res1=${filename%%_manifest*}
-    #res=${res1: -9}
     echo "$filename has found generating copy"
-    #cat $filename | tr "[:upper:]" "[:lower:]" > "$dir"CHECKSUM2.md5
-        ## change manifest content from *MB.... to Scan/... as the manifest location changed
-        ## sed -i(modify file) "" 's/$need_to_be_replaced/$replace_to/' "file"
-    #sed -i "" 's/\*/ Scan\//' "$dir"CHECKSUM2.md5
+    cat $filename | tr "[:upper:]" "[:lower:]" > "$dir"CHECKSUM2.md5
+    # change manifest content from *MB.... to Scan/... as the manifest location changed
+    # sed -i(modify file) "" 's/$need_to_be_replaced/$replace_to/' "file"
+    sed -i "" 's/\*/ Scan\//' "$dir"CHECKSUM2.md5
 done
 
 echo -e "---\n\nvalidation\n"
