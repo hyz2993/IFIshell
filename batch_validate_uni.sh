@@ -87,7 +87,12 @@ echo "This shell script is written by Yazhou He.
 	    filename="$dir"CHECKSUM.md5
 	    #res1=${filename%%_manifest*}
 	    #res=${res1: -9}
-	    echo "$filename has found generating copy"
+	    if [ `ls CHECKSUM.md5` ];then
+			echo "$filename has found generating copy"
+		else
+			echo "$filename not found, check the file structure!"
+			exit
+		fi
 	    cat $filename | tr "[:upper:]" "[:lower:]" > "$dir"CHECKSUM2.md5
             ## change manifest content from *MB.... to Scan/... as the manifest location changed
             ## sed -i(modify file) "" 's/$need_to_be_replaced/$replace_to/' "file"
