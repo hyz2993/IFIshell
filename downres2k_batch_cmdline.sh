@@ -1,1 +1,1 @@
-for file in *.mov; do ffmpeg -i "$file" -filter:v scale=2048:-1 -c:a copy "${file%_2kconvert}.mov"; done
+for file in *.mov; do ffmpeg -i "$file" -filter:v scale=2048:-1 -c:a copy "${file%.}_2kconvert.mov"; done
