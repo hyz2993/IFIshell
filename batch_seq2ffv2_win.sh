@@ -28,10 +28,10 @@ do
     i_path="$path/${dir%/}"
     echo -e "\nInput path: $i_path"
     echo -e "oe number:  oe$oen"
-    commd="seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Mark\ Keleghan"
+    commd="seq2ffv2_win.py -i $i_path -o $o_path -oe oe$oen -user Mark\ Keleghan"
     echo -e "$commd\n"
     sleep 2
-    process=$(seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Mark\ Keleghan)
+    process=$(seq2ffv2_win.py -i $i_path -o $o_path -oe oe$oen -user Mark\ Keleghan)
     echo "$process"
     echo -e "\n--- oe$oen SIP has procceed. Manually check result. ---\n"
     let oen+=1;

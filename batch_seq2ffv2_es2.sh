@@ -27,10 +27,10 @@ do
     i_path="$path/${dir%/}"
     echo -e "\nInput path: $i_path"
     echo -e "oe number:  oe$oen"
-    commd="/Users/admin/ifigit/IFIscripts_test/IFIscripts/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
+    commd="/Users/admin/ifigit/ifishells/seq2ffv2_mac.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
     echo -e "$commd\n"
     sleep 2
-    process=$(/Users/admin/ifigit/IFIscripts_test/IFIscripts/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
+    process=$(/Users/admin/ifigit/ifishells/seq2ffv2_mac.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
     echo "$process"
     echo -e "\n--- oe$oen SIP has generated ---\n"
     let oen+=1;
