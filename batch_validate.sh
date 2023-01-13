@@ -4,7 +4,6 @@ local_path=$(dirname $0)
 cd $local_path
 pwd
 echo "This shell script is written by Yazhou He"
-sleep 2
 
 echo -e "---\ncheck wav md5"
 sleep 2

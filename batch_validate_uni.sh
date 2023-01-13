@@ -12,10 +12,10 @@ sleep 0.5
 echo "	This shell script is written by Yazhou He.
 		It's a universal version for dpx&wav validation.
 		The DPX folder is now named Scan;
-		The WAV folder should be named WAV
+		The WAV folder should be named Wav
 	"
 
-if [ `ls */Wav` ];then
+if [[ `ls */Wav` ]];then
 	echo -e "---\n\ncheck wav md5\n"
 	sleep 2
 	for dir in */Wav/;
