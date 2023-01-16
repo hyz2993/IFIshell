@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+'''
+for win change shebang
+#!C:\Users\%USER%\AppData\Local\Programs\Python\Python310\python.exe
+'''
 
 '''
 Usage: seq2ffv1.py source_parent_directory output_directory
