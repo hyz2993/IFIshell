@@ -35,11 +35,11 @@ do
     echo -e "\nInput path: $i_path"
     echo -e "oe number:  oe$oen"
     # have to manually leave the username here, formatted 'Forname\ Surname'
-	commd="~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
+	commd="$HOME/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
     echo -e "$commd\n"
     sleep 2
     # also changed username here, formatted 'Forname\ Surname'
-	process=$(~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
+	# process=$($HOME/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
     echo "$process"
     echo -e "\n--- oe$oen SIP has procceed. Manually check result. ---\n"
     let oen+=1;
