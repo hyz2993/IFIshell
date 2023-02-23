@@ -4,13 +4,13 @@ echo -e "\nThis shell script is written by Yazhou He\n"
 local_path=$(dirname $0)
 cd $local_path
 path=$(pwd)
-echo -e "SIP for all psm objects.\nscript located in: $path"
+echo -e "Usage: sip for all psm objects under a batch.\nscript located in: $path"
 sleep 1
 
-##echo -e "\nInput user"
-##read user
-##echo -e "Welcome $user!"
-##sleep 1
+# echo -e "\nInput user"
+# read user
+# echo -e "Welcome $user!"
+# sleep 1
 
 echo -e "\nInput start OE number"
 read start_oen
@@ -20,9 +20,10 @@ sleep 1
 echo -e "\nInput/Drag output path"
 read o_path
 echo -e "Output path: $o_path"
+echo -e "**********\n"
 sleep 1
 
-for dir in *-*/*x*/; 
+for dir in *G*MK*/*x*/; 
 do
     i_path="$path/${dir%/}"
     echo -e "\nInput path: $i_path"
@@ -30,7 +31,7 @@ do
     commd="/Users/admin/ifigit/ifishells/seq2ffv2_mac.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
     echo -e "$commd\n"
     sleep 2
-    process=$(/Users/admin/ifigit/ifishells/seq2ffv2_mac.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
+    process=$(/Users/admin/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
     echo "$process"
     echo -e "\n--- oe$oen SIP has generated ---\n"
     let oen+=1;

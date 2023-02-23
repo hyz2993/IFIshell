@@ -5,7 +5,7 @@ for win change shebang
 '''
 
 '''
-Usage: seq2ffv1.py source_parent_directory output_directory
+Usage: seq2ffv2.py source_parent_directory output_directory
 The script will fnd a single reel, multi-reel (with or without sidecar WAV)
 image sequence beneath the source_parent_directory.
 The script will then:
