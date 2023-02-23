@@ -12,9 +12,12 @@ sleep 1
 # echo -e "Welcome $user!"
 # sleep 1
 
-echo -e "\nInput start OE number"
+echo -e "\nInput start OE number formatted 'oe12345'"
 read start_oen
 oen=${start_oen#*oe}
+# or manually leave the oe number below with just numbers (formatted '12345', no 'oe')
+# don't forget to comment the above lines :)
+# oen=
 sleep 1
 
 echo -e "\nInput/Drag output path"
@@ -23,18 +26,22 @@ echo -e "Output path: $o_path"
 echo -e "**********\n"
 sleep 1
 
+# change the directory key character here if needed:
+# for now, it refers to '[G]PR_[MK]08_01_0043_08[/]4096[x]3112[/]' 
+# also                  '[G]DB_[MK]08_01_0062_12[/]4096[x]3112[/]'
 for dir in *G*MK*/*x*/; 
 do
     i_path="$path/${dir%/}"
     echo -e "\nInput path: $i_path"
     echo -e "oe number:  oe$oen"
-    commd="~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
+    # have to manually leave the username here, formatted 'Forname\ Surname'
+	commd="~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He"
     echo -e "$commd\n"
     sleep 2
-    process=$(~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
+    # also changed username here, formatted 'Forname\ Surname'
+	process=$(~/ifigit/ifishells/seq2ffv2.py -i $i_path -o $o_path -oe oe$oen -user Yazhou\ He)
     echo "$process"
     echo -e "\n--- oe$oen SIP has procceed. Manually check result. ---\n"
     let oen+=1;
 done
 
-# SAMPLE - /Users/admin/ifigit/IFIscripts_test/IFIscripts/seq2ffv2.py -user Yazhou\ He -o /Volumes/G-RAID1/guinness/batch_05/sips -oe oe18573 -i /Volumes/IFI_Guinness/Raw_DPX_Scans/Batch_05/psm 4.36_C-1147237/4096x3112
