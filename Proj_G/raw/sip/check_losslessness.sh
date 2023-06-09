@@ -26,9 +26,9 @@ do
 	echo -e "-";
 done
 
-if [[ fail_flag == 1 ]];then
+if [[ $fail_flag == 1 ]];then
 	echo "***LOSSY EXISTS***"
-elif [[ fail_flag == 2 ]];then
+elif [[ $fail_flag == 2 ]];then
 	echo "all lossless"
 else
 	echo "ERROR! CHECK WHAT TERMINAL RETURNED"
