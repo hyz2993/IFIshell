@@ -18,6 +18,7 @@ for sip in oe*/;
 do
 	if [[ `grep -c "eventOutcome=lossless" $sip*/logs/*_sip_log.log` -ne 0 ]];then
 		echo "$sip is lossless"
+		fail_flag=2
 	else
 		echo "$sip is lossy"
 		fail_flag=1
@@ -27,6 +28,8 @@ done
 
 if [[ fail_flag == 1 ]];then
 	echo "***LOSSY EXISTS***"
-else
+elif [[ fail_flag == 2 ]];then
 	echo "all lossless"
+else
+	echo "ERROR! CHECK WHAT TERMINAL RETURNED"
 fi
