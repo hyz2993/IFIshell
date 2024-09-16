@@ -1,3 +1,7 @@
+# This repository has been archived and will no longer be maintained.
+
+----------
+
 # IFIshells
 IFIshells is to store bash shells (mac, git bash) and .bat processing files (windows) working for adjusting objects structure, looping **IFIscripts** and further usage.
 
